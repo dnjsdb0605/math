@@ -1,0 +1,6 @@
+{
+  "name": "수학 미니게임 랜드",
+  "description": "초등학교 5~6학년을 위한 2022 개정 수학과 교육과정 복습 미니게임 랜드",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

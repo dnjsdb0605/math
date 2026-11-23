@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #FAF8F2;
+    color: #1E293B;
+    overflow-x: hidden;
+  }
+}
+
+.font-display {
+  font-family: 'Jua', 'Noto Sans KR', sans-serif;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tactile game button press */
+.btn-game {
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms ease, background-color 140ms ease;
+}
+
+.btn-game:active:not(:disabled) {
+  transform: translateY(3px);
+}
+
+/* Playful animations using compositor-only properties */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(1.5deg);
+  }
+}
+
+@keyframes floatAlt {
+  0%, 100% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(-1.5deg);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.84);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gentleWobble {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-3px); }
+}
+
+@keyframes starBurst {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.6);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.15);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-34px) scale(0.95);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 3.4s ease-in-out infinite;
+}
+
+.animate-float-alt {
+  animation: floatAlt 3.9s ease-in-out infinite;
+}
+
+.animate-pop-in {
+  animation: popIn 220ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-wobble {
+  animation: gentleWobble 280ms ease-in-out;
+}
+
+.animate-star-burst {
+  animation: starBurst 850ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-alt,
+  .animate-pop-in,
+  .animate-wobble,
+  .animate-star-burst {
+    animation: none !important;
+  }
+}
